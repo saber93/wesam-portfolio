@@ -24,7 +24,7 @@ Deploy `dist/` to a static host. Relative asset links support both a custom doma
 - `index.html`: semantic page content and metadata.
 - `styles.css`: responsive layouts, print styles and reduced-motion support.
 - `app.js`: mobile navigation, keyboard-accessible approach tabs and navigation state.
-- `assets/`: portrait extracted from the supplied CV, the original CV download and favicon.
+- `assets/`: owner-supplied AVIF portrait, the original CV download and favicon.
 
 ## Editorial basis
 
