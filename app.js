@@ -1,3 +1,16 @@
+const pageLanguage = document.documentElement.lang;
+const languageChoice = new URLSearchParams(location.search).get('lang');
+try {
+  if (languageChoice === 'en' || pageLanguage === 'ar') localStorage.setItem('wesam-language', pageLanguage);
+  else if (localStorage.getItem('wesam-language') === 'ar') location.replace('/ar/' + location.hash);
+} catch { /* The pages remain usable when storage is disabled. */ }
+document.querySelectorAll('[data-language]').forEach(link => {
+  link.setAttribute('aria-current', link.dataset.language === pageLanguage ? 'true' : 'false');
+  link.addEventListener('click', () => {
+    try { localStorage.setItem('wesam-language', link.dataset.language); } catch {}
+    link.href = (link.dataset.language === 'ar' ? '/ar/' : '/?lang=en') + location.hash;
+  });
+});
 const menu = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 
