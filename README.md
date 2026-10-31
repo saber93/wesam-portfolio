@@ -17,7 +17,13 @@ npm run build
 npm run preview
 ```
 
-Deploy `dist/` to a static host. Relative asset links support both a custom domain and a GitHub Pages project subdirectory. No database, environment secrets, external fonts, analytics or third-party scripts are required.
+Deploy `dist/` to a static host. The English page is served at `/` and the Arabic page at `/ar/` on the configured domain. No database, environment secrets, external fonts, analytics or third-party scripts are required.
+
+## Languages
+
+Use EN / العربية in the header. Arabic is a complete static page with RTL layout, translated content, accessible labels and social metadata. Language selection is remembered locally, and switching preserves the current section. The original CV PDF remains English and is labelled accordingly.
+
+Edit English content in `index.html` and its Arabic equivalent in `translations/ar.json`. `scripts/build.mjs` generates both pages and shares the same image, styles and interaction code. New content must include its Arabic translation. Build before previewing to regenerate `/ar/`.
 
 ## Files
 
